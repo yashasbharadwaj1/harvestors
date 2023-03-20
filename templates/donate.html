@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>donate</title>
+</head>
+<style>
+  a.patreon-button {
+  border-radius: 5px;
+  background-color: #ff424d;
+  min-height: 42px;
+  border: none;
+  display: grid;
+  place-items: center;
+}
+a.patreon-button svg {
+  max-height: 12px;
+  fill: white;
+}
+a.patreon-button:active,
+a.patreon-button:active:focus,
+a.patreon-button:hover {
+  background-color: #e13d47;
+}
+
+.dark-palette a.patreon-button {
+  background-color: white;
+}
+
+.dark-palette a.patreon-button svg {
+  fill: #ff424d;
+}
+.dark-palette a.patreon-button:active,
+.dark-palette a.patreon-button:active:focus,
+.dark-palette a.patreon-button:hover {
+  background-color: #efefef;
+}
+
+</style>
+
+<body>
+donate
+
+<!--
+<script src="donate.js">
+</script>
+!-->
+<button id="patreon-button">Become a Patron</button>
+
+
+
+<p id="demo"></p>
+
+<script>
+
+const patreonButton = document.getElementById('patreon-button');
+patreonButton.addEventListener('click', () => {
+  const clientId = '_BcCKyZLI5Tpex9iuUFK6sQoqkSD__mFGzM-EffPsBDTGLaq2npc2KpUgpPOlYnV';
+  const amount = 100; // The amount in cents
+  const redirectURI = 'http://127.0.0.1:8000/thanks/';
+  const pledgeLevel = `?min_cents=${amount}`;
+  const v2Params = "&scope=identity%20identity[email]";
+
+  const href = `https://www.patreon.com/oauth2/become-patron${pledgeLevel}&client_id=${clientId}&redirect_uri=${redirectURI}${v2Params}`;
+  window.open(href);
+});
+
+
+</script>
+</body>
+</html>

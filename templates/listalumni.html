@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all alumni</title>
+</head>
+<body>
+<h1>all alumni</h1>
+{% for obj in all %}
+    <p>{{ obj.name }}</p>
+    <img src="{{ obj.pic.url }}" alt="connect" style="max-height:100px"></img>
+    <p>{{ obj.alumni_talk }}</p>
+{% endfor %}
+
+</body>
+</html>

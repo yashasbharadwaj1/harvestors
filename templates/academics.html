@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+academics
+{% endblock %}
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+
+        {% for post in a %}
+        <div class="col-md-4">
+          <a class="text-dark" href="{{post.get_absolute_url}}">
+            <div class="card mb-4 box-shadow">
+
+              <div class="card-body">
+                <h2 style="font-size:18px;font-weight:bold">{{post.title|truncatewords:100}}</h2>
+                <p class="card-text">{{post.excerpt|truncatewords:100}}</p>
+
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

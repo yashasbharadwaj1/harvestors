@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allfaculties</title>
+</head>
+<body>
+<h1>all faculties</h1>
+{% for obj in all %}
+    <p>{{ obj.name }}</p>
+    <img src="{{ obj.pic.url }}" alt="connect" style="max-height:100px"></img>
+    <p>{{ obj.faculty_description}}</p>
+{% endfor %}
+</body>
+</html>
