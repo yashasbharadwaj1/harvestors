@@ -11,4 +11,18 @@ urlpatterns = [
 
     path('allalumni/',views.list_alumni,name='alumni'),
     path('allfaculties',views.list_faculties,name='faculty'),
+
+    path('aboutus/',views.aboutus,name='about'),
+    #C.th
+    path('Certificate/',views.certificateinth,name='cth'),
+    #D.th
+    path('Diplomo/',views.diplomainth,name='dth'),
+    #B.th
+    path('Bachelor',views.bachelorinth,name='bth'),
+    #M.div
+    path('Divinity',views.mastersindivinity,name='mdiv'),
+
+    #admission frequently asked questions
+    path('admission',views.admissionfaq,name='faq')
+
 ]

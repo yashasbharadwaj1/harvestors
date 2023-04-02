@@ -1,0 +1,430 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=EDGE" />
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Harvesters Theological Seminar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+	<link rel="stylesheet" href="{% static 'aboutus.css' %}">
+
+	<link rel="shortcut icon" href="{% static 'logo.jpg' %}"> </head>
+
+<body>
+
+	<section class="header">
+		<nav class="navbar-one flex">
+			<div class="left flex">
+				<div class="Request info">
+					<li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
+				</div>
+				<div class="visit">
+					<li><a href="#"><b>visit</b></a></li>
+				</div>
+				<div class="Give">
+					<li><a href="{% url 'admission:donate' %}"><b>Give</b></a></li>
+				</div>
+				<div>
+					 <form action="{% url 'admission:apply' %}">
+					<button class="glow-on-hover" type="submit"><b>Apply</b></button>
+					 </form>
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar-second flex">
+			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}" width="400" height="300"/> </a>
+			<input class="menu-btn" type="checkbox" id="menu-btn">
+			<label class="menu-icon" for="menu-btn"> <span class="nav-icon"></span> </label>
+			<ul class="menu">
+				<li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
+				<li><a href="{% url 'admission:about' %}">About Us</a></li>
+				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
+				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
+				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
+				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
+			</ul>
+		</nav>
+
+        <section class="moto">
+        <div class="motohead">
+            <article class="motohead1">
+            <h2 class="motohead2"><b>OUR MOTO</b></h2>
+            <p><b>A College with a view to glorify God by training men and women as Evangelists, Church Planters, Pastors, Missionaries and Teachers.</b></p>
+            </article>
+        </div>
+        </section>
+
+       <div class="background-image">
+        <div class="backimg">
+        </div>
+    </div>
+        <section class="about-upper-section" itemprop="mainContentofPage">
+			<div class="container">
+				<article class="who-we-are">
+					<h2 class="top-heading"><b>Statement of Faith</b></h2>
+					<p>We believe there is but one living and true God, creator of all things, infinitely perfect and eternally existing in three persons Father, Son and Holy Spirit. Each is worthy of our worship, trust and obedience
+
+                        We believe that Jesus Christ is true God true man, conceived by the Holy Spirit and born of a virgin. He lived a sinless life and made atonement for our sins by his death on the cross. He arose bodily from the dead and ascended into heaven where, at the right hand of the Father. He is now our High Priest and Advocate.
+
+                        We believe that the Holy Spirit works to glorify the Lord Jesus Christ, convicts the world of sin, righteousness and judgment. The Holy Spirit imparts new life, baptizes the believing sinner into the body of Christ, and permanently indwells all children of God. The Holy Spirit guides, instructs and empowers the believer to live a lifestyle that pleases and glorifies God. He endows believers with spiritual gifts for mutual edification and distinct ministries.
+                        </p>
+
+					<p>We believe the Scriptures, both Old and New Testaments, to be inspired Word of God, without error in the original writings, and the supreme and final authority in all matters about which they speak. The believer is to properly interpret and apply the Scriptures through the illuminating work of the Holy Spirit.
+
+                        We believe that man was created in the image of God to glorify and enjoy Him forever. Man fell into sin by a willful act of disobedience to God, and consequently all human beings are born with a sinful nature, commit acts of sin, and are eternally separated from God apart from salvation through Christ.
+
+                        We believe that the substitutionary death of Jesus Christ and His bodily resurrection provides the only ground of justification for all who believe. This salvation is not obtained by human effort or merit, but is entirely a free gift of God’s grace received through faith in Jesus Christ. God Himself will make the faith of all genuine believers persevere to the end, so that no child of God will ever again be lost.
+
+                        We believe that all Christians will yet experience temporary personal sin and spiritual warfare in this life, but from the moment of salvation God has provided the means for overcoming these in the truth of the Scripture, the power of Christ through the indwelling Spirit, and the encouragement of the believers. </p>
+                    <p>We believe in the personal return of our Lord Jesus Christ to earth in sovereign power and glory to visibly establish His righteousness rule over creation. This blessed hope should vitally affect the daily life and service of the believers.
+
+                        We believe in the bodily resurrection of the dead, of the believer to everlasting blessedness and joy in the presence of God, and of the unbeliever to judgment and everlasting punishment apart from God.
+                        </p>
+				</article>
+
+				<div class="our-story">
+					<h2 class="top-heading">Highlights</h2>
+					<ul>
+						<p><i class="fas fa-chalkboard-teacher"></i> <a>Bi-lingual(English and Tamil)</a></p>
+						<p><i class="fas fa-graduation-cap"></i> <a>Inter-denominational</a></p>
+						<p><i class="fas fa-book-open"></i> <a>66 books of the Bible are taught in every ministry degree program</a></p>
+						<p><i class="fas fa-users"></i> <a>Practice ministry exposure and Spiritual formation</a></p>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+    <section class="second-container">
+        <div class="second-container-upper">
+        <article class="art">
+        <h2 class="second"><b>OUR GOALS</b></h2>
+
+        <ol>
+         <p> <li>To train students to understand and effectively communicate the truth of God’s Revelation (Bible) .</li></p>
+          <p><li>To instill in students a love and passion for the Glory of God.</li></p>
+          <p><li>To cultivate in students a burden for the lost.</li></p>
+          <p><li>To nourish the spiritual life of students through regular chapel services, spiritual formation and mentoring.</li></p>
+          <p><li>To offer the highest quality of distinctive evangelical academic training.</li></p>
+          <p><li>To nurture practical ministry skills in students to be effective evangelists, church planters, pastors, missionaries and teachers. </li></p>
+          <p><li>To encourage involvement in local ministry in the nearby villages.</li></p>
+          <p><li>To foster community among students, staff and professors. </li></p>
+        </ol>
+        </article>
+        </div>
+    </section>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+		<script src="{% static 'script.js' %}"></script>
+		<div class="main-wrapper">
+			<div class="sl-main-container">
+				<div class="sl-header-wrapper">
+					<h4>OUR FACULTIES</h4>
+					<h3>Harvesters Theological College</h3>
+					<p>Have a look at our faculties profile.</p>
+					<!-- If we need navigation buttons -->
+					<div class="sl-nav">
+						<div class="swiper-button-next">
+							<svg id="nextBtn" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+								<style>
+								#nextBtn {
+									fill: #04b7ac;
+								}
+								</style>
+								<path d="M32.5 0A32.5 32.5 0 1 0 65 32.5 32.5 32.5 0 0 0 32.5 0zm0 62A29.5 29.5 0 1 1 62 32.5 29.53 29.53 0 0 1 32.5 62zm-5.22-40.28L38.06 32.5 27.28 43.28l2.12 2.12 12.9-12.9-12.9-12.9z" /> </svg>
+						</div>
+						<div class="swiper-button-prev">
+							<svg xmlns="http://www.w3.org/2000/svg" id="prevBtn" data-name="Layer 1" viewBox="0 0 65 65">
+								<style>
+								#prevBtn {
+									fill: #04b7ac;
+								}
+								</style>
+								<path d="M0 32.5A32.5 32.5 0 1 0 32.5 0 32.5 32.5 0 0 0 0 32.5zm3 0A29.5 29.5 0 1 1 32.5 62 29.53 29.53 0 0 1 3 32.5zm32.6-12.9L22.7 32.5l12.9 12.9 2.12-2.12L26.94 32.5l10.78-10.78z" /> </svg>
+						</div>
+					</div>
+				</div>
+
+				<div class="sl-wrapper">
+					<!-- Slider main container -->
+					<div class="swiper-container">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide sl--slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-1 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PRINCIPAL</p>
+											<h2>J.S. Aaron John Samuel. </h2>
+											<p class="sl--card-content">Department - Biblical Studies (New Testament), Religious & Philosophy, Evangelism, Preaching & Apologetics  </p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-2 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>Fay D. Samuel.</h2>
+											<p class="sl--card-content">Biblical Studies, Counselling, Cultural Anthropology & Ethics </p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-3 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>Joseph Durairaj.</h2>
+											<p class="sl--card-content">Biblical Studies (Old Testament), Missions & Worship</p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-4 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>John Santharaj.</h2>
+											<p class="sl--card-content">Theological Studies, Pastoral Ministry & Christian Leadership</p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-5 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>Isaac B.</h2>
+											<p class="sl--card-content">Study Methods, Christian Education, Modern Religious movements and Library science</p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-6 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>Paul Raj.</h2>
+											<p class="sl--card-content">History of Christianity & Mission</p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slide-cover"></div>
+								<div class="sl-card-wrapper">
+									<div class="sl-gradient"></div>
+									<div class="sl-img-7 sl-bkg-img"></div>
+									<div class="sl--content-wrapper sl--content-wrapper-inactive">
+										<div class="sl--content-container sl--card-hide">
+											<p class="sl--sub-text">PROFESSOR</p>
+											<h2>Satheesh.</h2>
+											<p class="sl--card-content">History of Christianity & Social Analysis.</p>
+											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+										</div>
+										<!-- Card Nav GRP -->
+										<div class="sl--card-nav-container">
+											<!-- Reveal info btn -->
+											<div class="sl--content-btn content-reveal-btn">
+												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
+													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
+											</div>
+										</div>
+										<!-- END: Card Nav GRP -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- If we need pagination -->
+						<!--<div class="swiper-pagination"></div>--></div>
+				</div>
+				<!-- END: .sl-wrapper -->
+			</div>
+		</div>
+
+
+<footer class="footer-sec">
+  <div class="row" style="border-bottom: 1px solid #8b49ab;">
+    <div class="col-3">
+        <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}" alt="Dallas Theological Seminary Logo"></a>
+    </div>
+    <div class="col-9">
+      	<ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
+            <li id="menu-item-232" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dallasseminary/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg" alt="twitter"></a>
+            </li>
+            <li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100054252050271" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg" alt="facebook"></a>
+            </li>
+            <li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg" alt="instagram"></a>
+            </li>
+            <li id="menu-item-229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+              <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg" alt="youtube"></a>
+            </li>
+            <li id="menu-item-31061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+              <a target="_blank" rel="noopener noreferrer" href="#" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg" alt="linkedin"></a>
+            </li>
+          </ul>
+    </div>
+  </div>
+
+  <div class="row address">
+    <div class="col-4">
+      <p>Contact Address</p>
+        <address class="footer__address">Bethelpuram Ponni<br> Sholingur Main Road<br>htcseducation@gmail.com<br> 9787281950, 9611263688</address>
+    </div>
+    <div class="col-4 quick">
+      <p>Quick Links</p>
+      <ul>
+                <li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
+				<li><a href="{% url 'admission:about' %}">About Us</a></li>
+				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
+				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
+				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
+				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
+		  <li> <a href="#">Campus life</a></li>
+          <li> <a href="#">Events</a></li>
+      </ul>
+    </div>
+    <div class="col-4 quick">
+        <p>Others</p>
+        <ul>
+            <li > <a href="addmission.html">Our vision</a></li>
+            <li > <a href="addmission.html">Our mission</a></li>
+            <li> <a href="#">Recent events</a></li>
+            <li > <a href="faculty.html">Faculty</a></li>
+            <li> <a href="#">Campus life</a></li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="row copy">
+    <div class="col-12">
+
+          <p>©2023 Harvesters Theological Seminary.</p>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+  <script>
+$(document).ready(function(){
+  $('.carousel').slick({
+  slidesToShow: 3,
+  dots:true,
+  centerMode: true,
+  });
+});
+
+	  </script>
+</footer>
+
+</body>
+
+</html>

@@ -6,26 +6,6 @@ harvestors
 {% block content %}
 {% include "nav-main.html" %}
 
-
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#"></a>
-
-          <a
-            class="btn btn-sm btn-success"
-            href="{% url 'admission:home' %}"
-            style="
-              padding: 8px;
-              float: right;
-              background-color: green;
-              color: white;
-            "
-            >Back to home </a
-          >
-        </li>
-      </ul>
-
-
     <div class="jumbotron">
         <h1 class="display-4">{{post.title}}</h1>
         <p class="lead">{{post.excerpt}}</p>

@@ -24,7 +24,7 @@ def eventspost(request):
     query &= Q(status ='published')
     events_posts = Post.objects.all().filter(query)
 
-    return render(request, 'events.html',{'e':events_posts})
+    return render(request, 'harvestors.html',{'e':events_posts})
 
 def coursespost(request):
     query = Q()

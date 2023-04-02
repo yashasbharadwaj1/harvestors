@@ -1,0 +1,306 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=EDGE" />
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Harvesters Theological Seminar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="stylesheet"  href="{% static 'mdiv.css' %}">
+
+
+<body>
+
+	<section class="header">
+		<nav class="navbar-one flex">
+			<div class="left flex">
+				<div class="Request info">
+					<li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
+				</div>
+				<div class="visit">
+					<li><a href="#"><b>visit</b></a></li>
+				</div>
+				<div class="Give">
+					<li><a href="{% url 'admission:donate' %}"><b>Give</b></a></li>
+				</div>
+				<div>
+					 <form action="{% url 'admission:apply' %}">
+					<button class="glow-on-hover" type="submit"><b>Apply</b></button>
+					 </form>
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar-second flex">
+			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}" width="400" height="300"/> </a>
+			<input class="menu-btn" type="checkbox" id="menu-btn">
+			<label class="menu-icon" for="menu-btn"> <span class="nav-icon"></span> </label>
+			<ul class="menu">
+				<li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
+				<li><a href="{% url 'admission:about' %}">About Us</a></li>
+				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
+				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
+				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
+				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
+			</ul>
+		</nav>
+
+
+
+
+
+    <div class="headerimage">
+        <img class="img0" src="https://media.istockphoto.com/id/1085770318/photo/wooden-brown-books-shelves-with-a-lamp.jpg?b=1&s=612x612&w=0&k=20&c=v1fdTgAHjPcVbKNupozbZiRdlfEeQBnGbC0YjxNT6TI=">
+    </div>
+
+    <header class="entry-header1">
+        <h1 class="entry-title">OUR COURSES</h1>
+    </header>
+<br>
+<br>
+<div class="topic">
+    <h3 class="head"><b>Masters in Divinity(M.Div)</b></h3>
+    <hr>
+    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+
+
+
+<div class="tabs-wrapper">
+	<div class="tabs-titles-wrap">
+		<div class="tab active">Entry Requirements</div>
+		<div class="tab">Period of Study</div>
+		<div class="tab">Curriculum</div>
+	</div>
+	<div class="tabs-content-wrap">
+		<div class="tab-content active">
+			SSLC or 10th standard leaving certificate.
+		</div>
+		<div class="tab-content">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis dolores ex expedita harum, inventore itaque iure iusto magnam nostrum porro quas quo temporibus voluptate, voluptates! A, adipisci aliquid cum harum labore libero mollitia nam officiis porro, provident quaerat quidem recusandae repellendus sequi similique sit soluta vel, voluptatibus? Aliquam deleniti eius eos error, iusto minus mollitia nisi obcaecati odit porro praesentium quis rerum velit. Dignissimos eius nemo placeat provident quidem.
+		</div>
+		<div class="tab-content">
+			<b>Curriculum for Master of Divinity (M.Div.)</b><br>
+<b>Biblical Studies</b><br>
+Musicological Issues in Acts and Pauline Epistles<br>
+Hermeneutics <br>
+Introduction and Survey of Old Testament<br>
+Pentateuch<br>
+OT Prophets and Survey of New Testament<br>
+Life and Ministry of Jesus Christ<br>
+A Survey of Pauline writings with emphasis on Romans<br>
+Biblical Theology<br>
+Advanced Hebrew<br>
+Advanced Greek<br>
+Archaeology and the Bible<br>
+Hebrew Poetry and Wisdom Literature<br>
+Gospel of John –Detailed Study<br>
+General Epistles<br>
+Book of Hebrews –Detailed study<br>
+<b>Theological Studies</b><br>
+Introduction to Biblical and Christian Apologetics<br>
+Uniqueness of the Person and Work of Christ<br>
+Systematic Theology –I<br>
+Systematic Theology –II<br>
+Introduction to Christian Ethics<br>
+Theology in the Asian Context with special Emphasis on India<br>
+Indian Christian Theology<br>
+<b>History of Christianity</b><br>
+History of Christian Mission in the World<br>
+History of Christian Mission in India<br>
+History of Christian Mission in Asia<br>
+History of Reformation<br>
+Missionary Biographies - Selected<br>
+<b>Mission Studies</b><br>
+Biblical Cultural Anthropology<br>
+Strategies of Church Planting and Growth<br>
+Biblical Theology of Mission<br>
+Contemporary issues in the Mission<br>
+Missiology<br>
+Introduction to Communication<br>
+Evangelism<br>
+Rural and Tribal Mission<br>
+Marriage, Family and parenting<br>
+Holistic Development of Children<br>
+<b>Religion and Society</b><br>
+Major Religions in India<br>
+MRSM<br>
+Understanding Indian Society<br>
+Cults and Occults<br>
+Hinduism – A Detailed Study<br>
+Islam– A Detailed Study<br>
+Folk Religions– A Detailed Study<br>
+<b>Christian Ministry</b><br>
+Pastoral Care and Counseling<br>
+Expository Biblical Preaching<br>
+Mission and Church Management and Leadership<br>
+Homiletics and Worship<br>
+<b>General Studies</b><br>
+Research Methodology<br>
+Health and Hygiene<br>
+Human and Minority Rights in India<br>
+English papers I&II<br>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+  <script >(() => {
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+    const tabsWrap = document.querySelector(".tabs-titles-wrap");
+    const activeClass = "active";
+  //обрабатываем клик по родителю с табами
+    tabsWrap.addEventListener("click", e => {
+      //если произошел клик по элементу с классом tab
+      if (e.target.classList.contains("tab")) {
+        //идем циклом по всем tab
+        [...tabs].forEach((tab, tabIndex, tabArray) => {
+          //у всех tab и tab-content удаляем класс active
+          tab.classList.remove(activeClass);
+          contents[tabIndex].classList.remove(activeClass);
+          //если кликнули по tab
+          if (e.target === tab) {
+            //добавляем этому элементу(tab) класс active
+            tab.classList.add(activeClass);
+            //добавляем соотв-щему tab-content класс active
+            contents[tabIndex].classList.add(activeClass);
+          }
+        });
+      }
+    });
+  })();
+  </script>
+
+        <form action="{% url 'admission:apply' %}">
+  <button class="button1" type="submit">Apply</button>
+        </form>
+  <style>
+    .button1 {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button1 {background-color: #4CAF50; text-align: center;margin-left: 45%;} /* Green */
+    </style>
+
+   <li><a href="{% url 'admission:cth' %}">Certificate in Theology (C.Th)</a></li>
+    <li><a href="{% url 'admission:dth' %}">Diploma in Theology(Dip.Th)</a></li>
+    <li><a href="{% url 'admission:bth' %}">Bachelor in Theology(B.Th)</a></li>
+    <li><a href="{% url 'admission:mdiv' %}">Masters in Divinity(M.Div)</a></li>
+
+
+
+
+
+
+
+
+
+
+        <footer class="footer-sec">
+            <div class="row" style="border-bottom: 1px solid #8b49ab;">
+              <div class="col-3">
+                  <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}" alt="Dallas Theological Seminary Logo"></a>
+              </div>
+              <div class="col-9">
+                    <ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
+                      <li id="menu-item-232" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dallasseminary/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg" alt="twitter"></a>
+                      </li>
+                      <li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100054252050271" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg" alt="facebook"></a>
+                      </li>
+                      <li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg" alt="instagram"></a>
+                      </li>
+                      <li id="menu-item-229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+                        <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg" alt="youtube"></a>
+                      </li>
+                      <li id="menu-item-31061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
+                        <a target="_blank" rel="noopener noreferrer" href="#" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg" alt="linkedin"></a>
+                      </li>
+                    </ul>
+              </div>
+            </div>
+
+            <div class="row address">
+              <div class="col-4">
+                <p>Contact Address</p>
+                  <address class="footer__address">Bethelpuram Ponni<br> Sholingur Main Road<br>htcseducation@gmail.com<br> 9787281950, 9611263688</address>
+              </div>
+              <div class="col-4 quick">
+                <p>Quick Links</p>
+                <ul>
+                    <li > <a href="index.html">Home</a></li>
+                    <li > <a href="aboutus.html">About us</a></li>
+                    <li> <a href="academics.html">Academics</a></li>
+                    <li > <a href="addmission.html">Admission</a></li>
+                    <li > <a href="#">Student Life</a></li>
+                    <li> <a href="alumni.html">Alumini</a></li>
+                    <li> <a href="#">Events</a></li>
+                </ul>
+              </div>
+              <div class="col-4 quick">
+                  <p>Others</p>
+                  <ul>
+                      <li > <a href="addmission.html">Our vision</a></li>
+                      <li > <a href="addmission.html">Our mission</a></li>
+                      <li> <a href="#">Recent events</a></li>
+                      <li > <a href="faculty.html">Faculty</a></li>
+                      <li> <a href="#">Campus life</a></li>
+                  </ul>
+                </div>
+            </div>
+
+            <div class="row copy">
+              <div class="col-12">
+
+                    <p>©2023 Harvesters Theological Seminary.</p>
+              </div>
+            </div>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+            <script>
+          $(document).ready(function(){
+            $('.carousel').slick({
+            slidesToShow: 3,
+            dots:true,
+            centerMode: true,
+            });
+          });
+
+                </script>
+          </footer>
+
+          </body>
+
+          </html>

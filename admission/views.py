@@ -7,8 +7,31 @@ from .models import Apply, InformationRequests, Alumni, Faculty
 
 from .utils import calculate_age
 
+
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+
+# this is giving info regarding C.th
+def certificateinth(request):
+    return render(request, 'cth.html')
+
+
+def diplomainth(request):
+    return render(request, 'dipth.html')
+
+
+def bachelorinth(request):
+    return render(request, 'bth.html')
+
+
+def mastersindivinity(request):
+    return render(request, 'mdiv.html')
+
+
 def home(request):
-    return render(request,'home.html')
+    return render(request, 'harvestors.html')
+
 
 def donate(request):
     return render(request, 'donate.html')
@@ -47,7 +70,8 @@ def applyview(request):
             # print(birth_date.day) ex:1
             # print(birth_date.month) ex:2 feb
 
-            Apply.objects.create(name=name, email=email, birth_date=birth_date, phonenum=phonenum,course_interested=course_interested[0])
+            Apply.objects.create(name=name, email=email, birth_date=birth_date, phonenum=phonenum,
+                                 course_interested=course_interested[0])
 
             return render(request, 'applysuccess.html')
 
@@ -82,6 +106,8 @@ def requestinfo(request):
             return JsonResponse(data={"errors": form.errors})
 
 
+def admissionfaq(request):
+    return render(request, 'admission.html')
 
 
 def list_alumni(request):
@@ -92,6 +118,3 @@ def list_alumni(request):
 def list_faculties(request):
     allfacultyobjs = Faculty.objects.all()
     return render(request, 'listfaculties.html', {'all': allfacultyobjs})
-
-
-

@@ -4,7 +4,7 @@ from .views import *
 
 urlpatterns = [
 
-    path('academics/', academicspost, name='acadpost'),
+    path('academicspost/', academicspost, name='acadpost'),
     path('events/', eventspost, name='eventspost'),
     path('courses/', coursespost, name='coursespost'),
     path('<slug:post>/', post_single, name='post_single'),
