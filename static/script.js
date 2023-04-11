@@ -694,3 +694,31 @@ function myFunction() {
       }
     });
   })();
+
+
+
+
+
+  const sliderContainer = document.querySelector(".slider-container");
+const prevButton = document.querySelector(".slider-prev");
+const nextButton = document.querySelector(".slider-next");
+
+let slideIndex = 0;
+
+prevButton.addEventListener("click", () => {
+  if (slideIndex === 0) {
+    slideIndex = 2;
+  } else {
+    slideIndex--;
+  }
+  sliderContainer.style.transform = `translateX(-${slideIndex * 33.33}%)`;
+});
+
+nextButton.addEventListener("click", () => {
+  if (slideIndex === 2) {
+    slideIndex = 0;
+  } else {
+    slideIndex++;
+  }
+  sliderContainer.style.transform = `translateX(-${slideIndex * 33.33}%)`;
+});

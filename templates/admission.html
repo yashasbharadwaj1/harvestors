@@ -28,44 +28,54 @@
 <body>
 
 	<section class="header">
-		<nav class="navbar-one flex">
-			<div class="left flex">
-				<div class="Request info">
-					<li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
-				</div>
-				<div class="visit">
-					<li><a href="#"><b>visit</b></a></li>
-				</div>
-				<div class="Give">
-					<li><a href="{% url 'admission:donate' %}"><b>Give</b></a></li>
-				</div>
-				<div>
-					 <form action="{% url 'admission:apply' %}">
-					<button class="glow-on-hover" type="submit"><b>Apply</b></button>
-					 </form>
-				</div>
-			</div>
-		</nav>
-		<nav class="navbar-second flex">
-			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}" width="400" height="300"/> </a>
+<nav class="navbar-one flex">
+   <div class="left flex">
+      <div class="Request info">
+         <li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
+      </div>
+      <div class="visit">
+         <li><a href="{% url 'admission:visit' %}"><b>Visit</b></a></li>
+      </div>
+      <div class="Give">
+         <li><a href="{% url 'admission:donate' %}"><b>Donate</b></a></li>
+      </div>
+      <div>
+         <form action="{% url 'admission:apply' %}">
+            <button class="glow-on-hover" type="submit"><b>Apply</b></button>
+         </form>
+      </div>
+   </div>
+</nav>
+<nav class="navbar-second flex">
+			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}"> </a>
 			<input class="menu-btn" type="checkbox" id="menu-btn">
 			<label class="menu-icon" for="menu-btn"> <span class="nav-icon"></span> </label>
 			<ul class="menu">
-				<li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
-				<li><a href="{% url 'admission:about' %}">About Us</a></li>
-				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
-				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
-				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
-				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
-			</ul>
-		</nav>
+					<li class="dropdown">
+						<a href="{% url 'admission:home' %}" >Home</a>
+						<div class="dropdown-content">
+						  <a href="{% url 'admission:podcast' %}">Podcast</a>
+						  <a href="{% url 'admission:gallery' %}">Photogallery</a>
+						  <!--<a href="{% url 'admission:pc' %}">PlacementCell</a>!-->
+						</div>
+					  </li></li>
+
+      <li><a href="{% url 'admission:about' %}">About Us</a></li>
+      <li><a href="{% url 'admission:cth' %}" >Academics</a></li>
+      <li><a href="{% url 'admission:faq' %}" class="active">Admission</a></li>
+      <li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
+      <li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
+   </ul>
+</nav>
 
 
 
 
 
 
-
+<div class="headerimage">
+         <img class="img0" src="https://us.123rf.com/450wm/thares2020/thares20202105/thares2020210500120/168823293-education-concept-3d-of-book-and-graduate-hat-on-white-background-modern-flat-design-isometric.jpg?ver=6">
+    </div>
 
 
 
@@ -74,36 +84,18 @@
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <div class="accordion">
+              {% for i in faq %}
               <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why is the moon sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
+                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.question}}</span><span class="icon" aria-hidden="true"></span></button>
                 <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>{{i.answer}}</p>
                 </div>
               </div>
-              <div class="accordion-item">
-                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Why is the sky blue?</span><span class="icon" aria-hidden="true"></span></button>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will we ever discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How much does the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How do airplanes stay up?</span><span class="icon" aria-hidden="true"></span></button>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-                </div>
-              </div>
+               {% endfor %}
+
+
+
+
             </div>
           </div>
 
@@ -204,85 +196,152 @@ items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
 
-        <footer class="footer-sec">
-            <div class="row" style="border-bottom: 1px solid #8b49ab;">
-              <div class="col-3">
-                  <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}" alt="Dallas Theological Seminary Logo"></a>
-              </div>
-              <div class="col-9">
-                    <ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
-                      <li id="menu-item-232" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dallasseminary/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg" alt="twitter"></a>
-                      </li>
-                      <li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100054252050271" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg" alt="facebook"></a>
-                      </li>
-                      <li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg" alt="instagram"></a>
-                      </li>
-                      <li id="menu-item-229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-                        <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg" alt="youtube"></a>
-                      </li>
-                      <li id="menu-item-31061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-                        <a target="_blank" rel="noopener noreferrer" href="#" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg" alt="linkedin"></a>
-                      </li>
-                    </ul>
-              </div>
+       <footer class="footer-sec">
+          <div class="row" style="border-bottom: 1px solid #8b49ab;">
+            <div class="col-3">
+              <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}"
+                  alt="Dallas Theological Seminary Logo"></a>
             </div>
-
-            <div class="row address">
-              <div class="col-4">
-                <p>Contact Address</p>
-                  <address class="footer__address">Bethelpuram Ponni<br> Sholingur Main Road<br>htcseducation@gmail.com<br> 9787281950, 9611263688</address>
-              </div>
-              <div class="col-4 quick">
-                <p>Quick Links</p>
-                <ul>
-                    <li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
-				<li><a href="{% url 'admission:about' %}">About Us</a></li>
-				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
-				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
-				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
-				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
-                      <li> <a href="#">Campus life</a></li>
-                </ul>
-              </div>
-              <div class="col-4 quick">
-                  <p>Others</p>
-                  <ul>
-                      <li > <a href="addmission.html">Our vision</a></li>
-                      <li > <a href="addmission.html">Our mission</a></li>
-                      <li> <a href="#">Recent events</a></li>
-                      <li > <a href="faculty.html">Faculty</a></li>
-                      <li> <a href="#">Campus life</a></li>
-                  </ul>
-                </div>
+            <div class="col-9">
+              <ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
+                <li id="menu-item-232"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="#"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg"
+                      alt="twitter"></a>
+                </li>
+                <li id="menu-item-231"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.facebook.com/profile.php?id=100054252050271"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg"
+                      alt="facebook"></a>
+                </li>
+                <li id="menu-item-230"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg"
+                      alt="instagram"></a>
+                </li>
+                <li id="menu-item-229"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg"
+                      alt="youtube"></a>
+                </li>
+                <li id="menu-item-31061"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="#"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg"
+                      alt="linkedin"></a>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div class="row copy">
-              <div class="col-12">
-
-                    <p>©2023 Harvesters Theological Seminary.</p>
-              </div>
+          <div class="row address">
+            <div class="col-4">
+              <p>Contact Address</p>
+              <address class="footer__address">Bethelpuram Ponnai<br> Sholingur Main Road<br>htcseducation@gmail.com<br>
+                9787281950, 9611263688</address>
             </div>
+            <div class="col-4 quick">
+              <p>Quick Links</p>
+              <ul>
+                <li> <a href="{% url 'admission:home'%}">Home</a></li>
+                <li> <a href="{% url 'admission:about' %}">About us</a></li>
+                <li> <a href="{% url 'admission:cth' %}">Academics</a></li>
+                <li> <a href="{% url 'admission:faq' %}">Admission</a></li>
 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+                <li> <a href="{% url 'admission:alumni' %}">Alumini</a></li>
+                <li> <a href="{% url 'posting:eventspost' %}">Faculty</a></li>
+              </ul>
+            </div>
+            <div class="col-4 quick">
+              <p>Others</p>
+              <ul>
+                <li> <a href="{% url 'admission:faq' %}">Our vision</a></li>
+                <li> <a href="{% url 'admission:faq' %}">Our mission</a></li>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+                <li> <a href="{% url 'admission:faculty' %}">Faculty</a></li>
 
-            <script>
-          $(document).ready(function(){
-            $('.carousel').slick({
-            slidesToShow: 3,
-            dots:true,
-            centerMode: true,
+              </ul>
+            </div>
+          </div>
+
+          <div class="row copy">
+            <div class="col-12">
+
+              <p>©2023 Harvesters Theological Seminary.</p>
+            </div>
+          </div>
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+          <script>
+            $(document).ready(function () {
+              $('.carousel').slick({
+                slidesToShow: 3,
+                dots: true,
+                centerMode: true,
+              });
             });
-          });
 
-                </script>
-          </footer>
+          </script>
+
+
+          <script>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?95661';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url;
+            var options = {
+              "enabled": true,
+              "chatButtonSetting": {
+                "backgroundColor": "#4dc247",
+                "ctaText": "",
+                "borderRadius": "25",
+                "marginLeft": "0",
+                "marginBottom": "50",
+                "marginRight": "50",
+                "position": "right"
+              },
+              "brandSetting": {
+                "brandName": "HTCS",
+                "brandSubTitle": "Typically replies within a day",
+                "brandImg": "{% static 'col.jpg' %}",
+                "welcomeText": "Hi there!\nHow can I help you?",
+                "messageText": "Hello, I have a question about ",
+                "backgroundColor": "#0a5f54",
+                "ctaText": "Start Chat",
+                "borderRadius": "25",
+                "autoShow": false,
+                "phoneNumber": "919787281950"
+              }
+            };
+            s.onload = function () {
+              CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          </script>
+        </footer>
+        </script>
 
           </body>
 

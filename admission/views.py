@@ -1,36 +1,118 @@
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
-
+import json
 # Create your views here.
 from .forms import applyform, requestinfoform
-from .models import Apply, InformationRequests, Alumni, Faculty
+from .models import *
 
 from .utils import calculate_age
+from rest_framework.decorators import api_view
+
+from .serializers import *
+
+import requests
+from django.urls import reverse
+
+
+def t(request):
+    url = reverse('posting:eventspost')
+    response = requests.get(request.build_absolute_uri(url))  # Build the full URL
+
+    data = response.json()  # dict which contans dictionary
+    for i in data["output"]:
+        print(i["title"])
+    return HttpResponse("t")
+
+
+def home(request):
+    url_for_recentevents = reverse('posting:eventspost')
+    response = requests.get(request.build_absolute_uri(url_for_recentevents))  # Build the full URL
+    recentevents = response.json()  # dict which contans dictionary
+
+    url_for_coursedetails = reverse('admission:course_details')
+    coursedetailsresponse = requests.get(request.build_absolute_uri(url_for_coursedetails))
+    coursedetails = coursedetailsresponse.json()
+
+    y = YoutubeLink.objects.all()
+    # 3 things need to be updated recent events,courses offered,youtube links
+    context = {"recentevents": recentevents, "coursedetails": coursedetails, "y": y}
+    return render(request, 'index.html', context)
+
+
+def podcast(request):
+    podcast_dataurl = reverse("admission:data_for_podcast")
+    podcastresponse = requests.get(request.build_absolute_uri(podcast_dataurl))
+    datapodcast = podcastresponse.json()
+    context = {"datapodcast": datapodcast}
+    return render(request, 'podcast.html', context)
+
+
+@api_view(["GET"])
+def data_for_podcast(request):
+    podcast_objs = Podcast.objects.all()
+    serialized = PodcastSerializer(data=podcast_objs, many=True)
+    if not serialized.is_valid():
+        ordered_dict = serialized.data
+        json_str = json.dumps(ordered_dict)
+        podcast_dict = json.loads(json_str)
+
+    return JsonResponse(data={"podcastdata": podcast_dict})
+
+
+def photogallery(request):
+    photogallery_url = reverse('admission:gallerydata')
+    galleryresponse = requests.get(request.build_absolute_uri(photogallery_url))
+    gallerydata = galleryresponse.json()
+    context = {"gallerydata":gallerydata}
+    return render(request, 'gallery.html', context)
+
+
+@api_view(["GET"])
+def data_for_photogallery(request):
+    gallery_objs = PhotoGallery.objects.all()
+    serialized = PhotoGallerySerializer(data=gallery_objs, many=True)
+    if not serialized.is_valid():
+        ordered_dict = serialized.data
+        json_str = json.dumps(ordered_dict)
+        gallery_dict = json.loads(json_str)
+
+    return JsonResponse(data={"gallerydata": gallery_dict})
+
+
+
+def placementcell(request):
+    return render(request, 'placementcell.html')
+
+
+def visit(request):
+    return render(request, 'visit.html')
 
 
 def aboutus(request):
-    return render(request, 'aboutus.html')
+    allfacultyobjs = Faculty.objects.all()
+    context = {'all':allfacultyobjs}
+    return render(request, 'aboutus.html',context)
 
 
 # this is giving info regarding C.th
 def certificateinth(request):
-    return render(request, 'cth.html')
+    cth = Certificateintheology.objects.all()
+    return render(request, 'cth.html',{"cth":cth})
 
 
 def diplomainth(request):
-    return render(request, 'dipth.html')
+    dth = Diplomointheology.objects.all()
+    return render(request, 'dipth.html',{"dth":dth})
 
 
 def bachelorinth(request):
-    return render(request, 'bth.html')
+    bth = Bachelorsintheology.objects.all()
+    return render(request, 'bth.html',{"bth":bth})
 
 
 def mastersindivinity(request):
-    return render(request, 'mdiv.html')
-
-
-def home(request):
-    return render(request, 'harvestors.html')
+    mdiv = MastersinDivinity.objects.all()
+    return render(request, 'mdiv.html',{"mdiv":mdiv})
 
 
 def donate(request):
@@ -107,7 +189,8 @@ def requestinfo(request):
 
 
 def admissionfaq(request):
-    return render(request, 'admission.html')
+    faq = Faq.objects.all()
+    return render(request, 'admission.html',{"faq":faq})
 
 
 def list_alumni(request):
@@ -115,6 +198,28 @@ def list_alumni(request):
     return render(request, 'listalumni.html', {'all': allalumniobjs})
 
 
+# this view is for all faculties from faculty button
 def list_faculties(request):
     allfacultyobjs = Faculty.objects.all()
     return render(request, 'listfaculties.html', {'all': allfacultyobjs})
+
+
+# courses offered in index.html rest-api endpoint
+@api_view(["GET"])
+def course_details(request):
+    if request.method == "GET":
+        course_objs = Course.objects.all()
+        serialized = CourseSerializer(data=course_objs, many=True)
+
+        if not serialized.is_valid():
+            ordered_dict = serialized.data
+            # json.dumps to Serialize obj to a JSON formatted str.
+            json_str = json.dumps(ordered_dict)
+            # json.loads to Deserialize s (a str, bytes or bytearray instance containing a JSON document) to a Python object.
+            my_dict = json.loads(json_str)
+            context = {"coursedata": my_dict}
+        return JsonResponse(data=context)
+
+
+# about us faculties needs only pic,name,department rest api endpoint
+

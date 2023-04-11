@@ -24,42 +24,53 @@
 
 	<link rel="stylesheet" href="{% static 'aboutus.css' %}">
 
-	<link rel="shortcut icon" href="{% static 'logo.jpg' %}"> </head>
+
 
 <body>
-
-	<section class="header">
-		<nav class="navbar-one flex">
-			<div class="left flex">
-				<div class="Request info">
-					<li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
-				</div>
-				<div class="visit">
-					<li><a href="#"><b>visit</b></a></li>
-				</div>
-				<div class="Give">
-					<li><a href="{% url 'admission:donate' %}"><b>Give</b></a></li>
-				</div>
-				<div>
-					 <form action="{% url 'admission:apply' %}">
-					<button class="glow-on-hover" type="submit"><b>Apply</b></button>
-					 </form>
-				</div>
-			</div>
-		</nav>
-		<nav class="navbar-second flex">
-			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}" width="400" height="300"/> </a>
+<section class="header">
+<nav class="navbar-one flex">
+   <div class="left flex">
+      <div class="Request info">
+         <li><a href="{% url 'admission:info' %}"><b>Request info</b></a></li>
+      </div>
+      <div class="visit">
+         <li><a href="{% url 'admission:visit' %}"><b>Visit</b></a></li>
+      </div>
+      <div class="Give">
+         <li><a href="{% url 'admission:donate' %}"><b>Donate</b></a></li>
+      </div>
+      <div>
+         <form action="{% url 'admission:apply' %}">
+            <button class="glow-on-hover" type="submit"><b>Apply</b></button>
+         </form>
+      </div>
+   </div>
+</nav>
+<nav class="navbar-second flex">
+			<a href="#" class="logo"> <img src="{% static 'Label 3.png' %}"> </a>
 			<input class="menu-btn" type="checkbox" id="menu-btn">
 			<label class="menu-icon" for="menu-btn"> <span class="nav-icon"></span> </label>
 			<ul class="menu">
-				<li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
-				<li><a href="{% url 'admission:about' %}">About Us</a></li>
-				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
-				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
-				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
-				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
-			</ul>
-		</nav>
+					<li class="dropdown">
+						<a href="{% url 'admission:home' %}">Home</a>
+						<div class="dropdown-content">
+						  <a href="{% url 'admission:podcast' %}">Podcast</a>
+						  <a href="{% url 'admission:gallery' %}">Photogallery</a>
+						  <!--<a href="{% url 'admission:pc' %}">PlacementCell</a>!-->
+						</div>
+					  </li></li>
+
+      <li><a href="{% url 'admission:about' %}" class="active">About Us</a></li>
+      <li><a href="{% url 'admission:cth' %}">Academics</a></li>
+      <li><a href="{% url 'admission:faq' %}">Admission</a></li>
+      <li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
+      <li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
+   </ul>
+</nav>
+		<div class="headerimage">
+			<img class="img0" src="data:image/jpeg;base64,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">
+		</div>
+
 
         <section class="moto">
         <div class="motohead">
@@ -110,6 +121,19 @@
 				</div>
 			</div>
 		</section>
+	<article class="who-we-are1">
+			<h2 class="top-heading1"><b>HISTORY</b></h2>
+			<p>Harvesters Theological College & Seminary was founded on the 13th Nov, 2002 by Rev. James Sundar and Mrs. Ruth James in response to the need to equipe God's servant for Pastoral leadership for  those  trusting Christ in and around Ponnai area in Tamilnadu. Sensing God's leading, Rev. Mack, Kearney, President, Gospel Harvesters International provided the right hand of fellowship to his long time ministry associate Rev. James Sundar.
+				</p>
+
+			<p>It was in the summer of 2003, during his internship that Aaron John Samuel,  sensed a calling for teaching ministry during internship ministry. After graduating with a Th.M in New Testament and World Missions in 2005, he was invited to become the Principal of the seminary.
+
+				The seminary was first accredited by Indian Institute of Mission in from 2007 to 2014. Since, 2015, the seminary has been  associated with Asia Theological Association as a candiate member. The seminary in the process of applying for full accreditation with Asian Theological Association.  </p>
+			<p>God has blessed us with good infrastructure (Chapel, classrooms, library, dinning hall, separate accommodation for male and female students and play ground);  qualified godly faculty, opportunities for practical ministry training and a loving God glorifying, Christ centered, Spirit led community.
+
+				By the grace of God, the seminary has trained many evangelists, missionaries, church planters, Pastors and theological educators and is looking to equip more.
+				</p>
+		</article>
     <section class="second-container">
         <div class="second-container-upper">
         <article class="art">
@@ -167,17 +191,20 @@
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<!-- Slides -->
+                            {% for obj in all %}
 							<div class="swiper-slide sl--slide">
 								<div class="slide-cover"></div>
 								<div class="sl-card-wrapper">
 									<div class="sl-gradient"></div>
-									<div class="sl-img-1 sl-bkg-img"></div>
+									<div class="sl-img-1 sl-bkg-img">
+										<img src="{{ obj.pic.url }}" height="100%" widht="100%">
+									</div>
 									<div class="sl--content-wrapper sl--content-wrapper-inactive">
 										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PRINCIPAL</p>
-											<h2>J.S. Aaron John Samuel. </h2>
-											<p class="sl--card-content">Department - Biblical Studies (New Testament), Religious & Philosophy, Evangelism, Preaching & Apologetics  </p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
+											<p class="sl--sub-text">{{obj.role}}</p>
+											<h2>{{obj.name}} </h2>
+											<p class="sl--card-content">{{obj.faculty_department}}</p>
+											<div class="sl--link"><li><a href="{% url 'admission:faculty' %}">Read more</a></li></div>
 										</div>
 										<!-- Card Nav GRP -->
 										<div class="sl--card-nav-container">
@@ -191,239 +218,165 @@
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-2 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>Fay D. Samuel.</h2>
-											<p class="sl--card-content">Biblical Studies, Counselling, Cultural Anthropology & Ethics </p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-3 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>Joseph Durairaj.</h2>
-											<p class="sl--card-content">Biblical Studies (Old Testament), Missions & Worship</p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-4 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>John Santharaj.</h2>
-											<p class="sl--card-content">Theological Studies, Pastoral Ministry & Christian Leadership</p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-5 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>Isaac B.</h2>
-											<p class="sl--card-content">Study Methods, Christian Education, Modern Religious movements and Library science</p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-6 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>Paul Raj.</h2>
-											<p class="sl--card-content">History of Christianity & Mission</p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slide-cover"></div>
-								<div class="sl-card-wrapper">
-									<div class="sl-gradient"></div>
-									<div class="sl-img-7 sl-bkg-img"></div>
-									<div class="sl--content-wrapper sl--content-wrapper-inactive">
-										<div class="sl--content-container sl--card-hide">
-											<p class="sl--sub-text">PROFESSOR</p>
-											<h2>Satheesh.</h2>
-											<p class="sl--card-content">History of Christianity & Social Analysis.</p>
-											<div class="sl--link"><li><a href="faculty.html">Read more</a></li></div>
-										</div>
-										<!-- Card Nav GRP -->
-										<div class="sl--card-nav-container">
-											<!-- Reveal info btn -->
-											<div class="sl--content-btn content-reveal-btn">
-												<svg class="card-nav-gfx sl--show-card-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.63 113.63">
-													<path d="M105.56 48.75H64.88V8.06a8.06 8.06 0 0 0-16.12 0v40.69H8.06a8.06 8.06 0 0 0 0 16.13h40.69v40.69a8.06 8.06 0 0 0 16.13 0V64.88h40.69a8.06 8.06 0 0 0 0-16.12z" /> </svg>
-											</div>
-										</div>
-										<!-- END: Card Nav GRP -->
-									</div>
-								</div>
+							{% endfor %}
+
 							</div>
 						</div>
 						<!-- If we need pagination -->
-						<!--<div class="swiper-pagination"></div>--></div>
+						<!--<div class="swiper-pagination"></div>-->
 				</div>
 				<!-- END: .sl-wrapper -->
 			</div>
 		</div>
 
 
-<footer class="footer-sec">
-  <div class="row" style="border-bottom: 1px solid #8b49ab;">
-    <div class="col-3">
-        <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}" alt="Dallas Theological Seminary Logo"></a>
-    </div>
-    <div class="col-9">
-      	<ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
-            <li id="menu-item-232" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dallasseminary/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg" alt="twitter"></a>
-            </li>
-            <li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100054252050271" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg" alt="facebook"></a>
-            </li>
-            <li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg" alt="instagram"></a>
-            </li>
-            <li id="menu-item-229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-              <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg" alt="youtube"></a>
-            </li>
-            <li id="menu-item-31061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social" role="menuitem">
-              <a target="_blank" rel="noopener noreferrer" href="#" aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab"> <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg" alt="linkedin"></a>
-            </li>
-          </ul>
-    </div>
-  </div>
+ <footer class="footer-sec">
+          <div class="row" style="border-bottom: 1px solid #8b49ab;">
+            <div class="col-3">
+              <a href="index.html" class="footer__logo"> <img class="my" img src="{% static 'logo1.jpg' %}"
+                  alt="Dallas Theological Seminary Logo"></a>
+            </div>
+            <div class="col-9">
+              <ul id="menu-social" class="footer__social" role="menu" aria-label="Footer menu links">
+                <li id="menu-item-232"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="#"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg&quot; alt=&quot;twitter&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-twitter-square-purple.svg"
+                      alt="twitter"></a>
+                </li>
+                <li id="menu-item-231"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.facebook.com/profile.php?id=100054252050271"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg&quot; alt=&quot;facebook&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-facebook-square-purple.svg"
+                      alt="facebook"></a>
+                </li>
+                <li id="menu-item-230"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/htcs.education/"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg&quot; alt=&quot;instagram&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-instagram-square-purple.svg"
+                      alt="instagram"></a>
+                </li>
+                <li id="menu-item-229"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/@HarvestersTheologicalCollege"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg&quot; alt=&quot;youtube&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-youtube-square-purple.svg"
+                      alt="youtube"></a>
+                </li>
+                <li id="menu-item-31061"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31061 footer__item footer__item--social footer__link footer__link--social"
+                  role="menuitem">
+                  <a target="_blank" rel="noopener noreferrer" href="#"
+                    aria-label="<img src=&quot;https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg&quot; alt=&quot;linkedin&quot;> opens in new tab">
+                    <img src="https://www.dts.edu/wp-content/themes/dts/img/icon-linkedin-square-purple.svg"
+                      alt="linkedin"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-  <div class="row address">
-    <div class="col-4">
-      <p>Contact Address</p>
-        <address class="footer__address">Bethelpuram Ponni<br> Sholingur Main Road<br>htcseducation@gmail.com<br> 9787281950, 9611263688</address>
-    </div>
-    <div class="col-4 quick">
-      <p>Quick Links</p>
-      <ul>
-                <li><a class="active" href="{% url 'admission:home' %}">Home</a></li>
-				<li><a href="{% url 'admission:about' %}">About Us</a></li>
-				<li><a href="{% url 'admission:cth' %}">Academics</a></li>
-				<li><a href="{% url 'admission:faq' %}">Admission</a></li>
-				<li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
-				<li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
-		  <li> <a href="#">Campus life</a></li>
-          <li> <a href="#">Events</a></li>
-      </ul>
-    </div>
-    <div class="col-4 quick">
-        <p>Others</p>
-        <ul>
-            <li > <a href="addmission.html">Our vision</a></li>
-            <li > <a href="addmission.html">Our mission</a></li>
-            <li> <a href="#">Recent events</a></li>
-            <li > <a href="faculty.html">Faculty</a></li>
-            <li> <a href="#">Campus life</a></li>
-        </ul>
-      </div>
-  </div>
+          <div class="row address">
+            <div class="col-4">
+              <p>Contact Address</p>
+              <address class="footer__address">Bethelpuram Ponnai<br> Sholingur Main Road<br>htcseducation@gmail.com<br>
+                9787281950, 9611263688</address>
+            </div>
+            <div class="col-4 quick">
+              <p>Quick Links</p>
+              <ul>
+                <li> <a href="{% url 'admission:home'%}">Home</a></li>
+                <li> <a href="{% url 'admission:about' %}">About us</a></li>
+                <li> <a href="{% url 'admission:cth' %}">Academics</a></li>
+                <li> <a href="{% url 'admission:faq' %}">Admission</a></li>
 
-  <div class="row copy">
-    <div class="col-12">
+                <li> <a href="{% url 'admission:alumni' %}">Alumini</a></li>
+                <li> <a href="{% url 'posting:eventspost' %}">Faculty</a></li>
+              </ul>
+            </div>
+            <div class="col-4 quick">
+              <p>Others</p>
+              <ul>
+                <li> <a href="{% url 'admission:faq' %}">Our vision</a></li>
+                <li> <a href="{% url 'admission:faq' %}">Our mission</a></li>
 
-          <p>©2023 Harvesters Theological Seminary.</p>
-    </div>
-  </div>
+                <li> <a href="{% url 'admission:faculty' %}">Faculty</a></li>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+              </ul>
+            </div>
+          </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+          <div class="row copy">
+            <div class="col-12">
 
-  <script>
-$(document).ready(function(){
-  $('.carousel').slick({
-  slidesToShow: 3,
-  dots:true,
-  centerMode: true,
-  });
-});
+              <p>©2023 Harvesters Theological Seminary.</p>
+            </div>
+          </div>
 
-	  </script>
-</footer>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+          <script>
+            $(document).ready(function () {
+              $('.carousel').slick({
+                slidesToShow: 3,
+                dots: true,
+                centerMode: true,
+              });
+            });
+
+          </script>
+
+
+          <script>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?95661';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url;
+            var options = {
+              "enabled": true,
+              "chatButtonSetting": {
+                "backgroundColor": "#4dc247",
+                "ctaText": "",
+                "borderRadius": "25",
+                "marginLeft": "0",
+                "marginBottom": "50",
+                "marginRight": "50",
+                "position": "right"
+              },
+              "brandSetting": {
+                "brandName": "HTCS",
+                "brandSubTitle": "Typically replies within a day",
+                "brandImg": "{% static 'col.jpg' %}",
+                "welcomeText": "Hi there!\nHow can I help you?",
+                "messageText": "Hello, I have a question about ",
+                "backgroundColor": "#0a5f54",
+                "ctaText": "Start Chat",
+                "borderRadius": "25",
+                "autoShow": false,
+                "phoneNumber": "919787281950"
+              }
+            };
+            s.onload = function () {
+              CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          </script>
+        </footer>
+        </script>
+
 
 </body>
 

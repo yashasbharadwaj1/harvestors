@@ -23,6 +23,17 @@ urlpatterns = [
     path('Divinity',views.mastersindivinity,name='mdiv'),
 
     #admission frequently asked questions
-    path('admission',views.admissionfaq,name='faq')
+    path('admission',views.admissionfaq,name='faq'),
+
+    path('coursesdata',views.course_details,name='course_details'),
+
+    path('podcast',views.podcast,name="podcast"),
+    path('photogallery',views.photogallery,name="gallery"),
+    path('placementcell',views.placementcell,name="pc"),
+    path('visit',views.visit,name="visit"),
+    #api
+    path('podcastdata',views.data_for_podcast,name='data_for_podcast'),
+    path('gallerydata',views.data_for_photogallery,name='gallerydata'),
+    path('t',views.t)
 
 ]

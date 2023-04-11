@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'posting',
     'ckeditor',
     'ckeditor_uploader',
+    'rest_framework',
 
 ]
 

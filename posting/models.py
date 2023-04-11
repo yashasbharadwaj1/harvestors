@@ -6,6 +6,12 @@ from django.utils import timezone
 
 # models for handling events,achievements,announcements
 
+from django.core.exceptions import ValidationError
+
+def validate_word_count(value):
+    if len(value.split()) > 30:
+        raise ValidationError('Too many words! cant enter more than 30 words')
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
@@ -15,27 +21,19 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    class NewManager(models.Manager):
-        def get_queryset(self):
-            return super().get_queryset().filter(status='published')
-
-    options = (
-        ('draft', 'Draft'),
-        ('published', 'Published'),
-    )
 
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, default=1)
 
     title = models.CharField(max_length=250)
     # excerpt is like a short description of ur main content
-    excerpt = models.TextField(null=True)
+    summary = models.TextField(null=False,default="summary",  validators=[validate_word_count])
+    morecontent = models.TextField(default ="body")
+    #should not have gaps,letters etc
     slug = models.SlugField(max_length=250, unique_for_date='publish')
-    body= RichTextUploadingField(blank=False)
-    status = models.CharField(max_length=10, choices=options, default='draft')
+    #body= RichTextUploadingField(blank=False)
+    picture = models.ImageField(upload_to="postpics/",default='sli1.jpg')
     publish = models.DateTimeField(default=timezone.now)
-
-    newmanager = NewManager()  # custom manager
     objects = models.Manager()
 
     def get_absolute_url(self):
@@ -46,4 +44,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-# Create your models here.
+
