@@ -79,11 +79,27 @@ class Course(models.Model):
     name = models.CharField(max_length=100)
     short_code = models.CharField(max_length=20)
     description = models.TextField(default="course details")
-
+    picture = models.ImageField(upload_to='coursepic',default='')
 
     def __str__(self):
         return self.name
 
+class Slider(models.Model):
+    img = models.ImageField(upload_to='sliderpics')
+    title = models.CharField(default="give title",max_length=100)
+    caption = models.TextField(default="keep the content short")
+
+    def __str__(self):
+        return self.title
+
+class Aboutpagecontent(models.Model):
+    vision = models.TextField()
+    mission = models.TextField()
+    history = models.TextField()
+    features = models.TextField()
+
+    def __str__(self):
+        return "you edit only this dont add any other "
 
 class YoutubeLink(models.Model):
     video_title = models.TextField(default="enter title here")
@@ -114,11 +130,25 @@ class PhotoGallery(models.Model):
 
 
 class Faq(models.Model):
+
     question = models.TextField()
     answer = models.TextField()
 
     def __str__(self):
         return self.question
+
+class AdmissionPagecontent(models.Model):
+    title = models.CharField(default="title", max_length=100)
+    description = models.TextField(default="description")
+    def __str__(self):
+        return "this is the only item needed donot add more"
+
+class StatementOfBelief(models.Model):
+    title = models.CharField(default="title",max_length=200)
+    statement = models.TextField(default="statement")
+    def __str__(self):
+        return "this is the only item needed donot add more"
+
 
 
 class Certificateintheology(models.Model):
@@ -166,3 +196,4 @@ class MastersinDivinity(models.Model):
         verbose_name_plural = "Masters in Divinity"
     def __str__(self):
         return "this is the only item needed donot add more"
+

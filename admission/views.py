@@ -14,6 +14,23 @@ import requests
 from django.urls import reverse
 
 
+
+def robots_txt(request):
+    content = "User-agent: *\nDisallow:\nSitemap: https://www.harvesterstheologicalseminary.org/sitemap.xml"
+    return HttpResponse(content, content_type="text/plain")
+
+@api_view(["GET"])
+def support(request):
+    apply_objs = Apply.objects.all()
+    serialized = ApplySerializer(data=apply_objs)
+    if not serialized.is_valid():
+        ordered_dict = serialized.data
+        json_str = json.dumps(ordered_dict)
+        status_dict = json.loads(json_str)
+
+    return JsonResponse(data={"d": "d"})
+
+
 def t(request):
     url = reverse('posting:eventspost')
     response = requests.get(request.build_absolute_uri(url))  # Build the full URL
@@ -22,6 +39,10 @@ def t(request):
     for i in data["output"]:
         print(i["title"])
     return HttpResponse("t")
+
+
+def sitemap(request):
+    return render(request, 'sitemap.html')
 
 
 def home(request):
@@ -34,8 +55,10 @@ def home(request):
     coursedetails = coursedetailsresponse.json()
 
     y = YoutubeLink.objects.all()
+
+    s = Slider.objects.all()
     # 3 things need to be updated recent events,courses offered,youtube links
-    context = {"recentevents": recentevents, "coursedetails": coursedetails, "y": y}
+    context = {"recentevents": recentevents, "coursedetails": coursedetails, "y": y,"s":s}
     return render(request, 'index.html', context)
 
 
@@ -63,7 +86,7 @@ def photogallery(request):
     photogallery_url = reverse('admission:gallerydata')
     galleryresponse = requests.get(request.build_absolute_uri(photogallery_url))
     gallerydata = galleryresponse.json()
-    context = {"gallerydata":gallerydata}
+    context = {"gallerydata": gallerydata}
     return render(request, 'gallery.html', context)
 
 
@@ -79,7 +102,6 @@ def data_for_photogallery(request):
     return JsonResponse(data={"gallerydata": gallery_dict})
 
 
-
 def placementcell(request):
     return render(request, 'placementcell.html')
 
@@ -90,29 +112,30 @@ def visit(request):
 
 def aboutus(request):
     allfacultyobjs = Faculty.objects.all()
-    context = {'all':allfacultyobjs}
-    return render(request, 'aboutus.html',context)
+    textcontent = Aboutpagecontent.objects.all()
+    context = {'all': allfacultyobjs,'textcontent':textcontent}
+    return render(request, 'aboutus.html', context)
 
 
 # this is giving info regarding C.th
 def certificateinth(request):
     cth = Certificateintheology.objects.all()
-    return render(request, 'cth.html',{"cth":cth})
+    return render(request, 'cth.html', {"cth": cth})
 
 
 def diplomainth(request):
     dth = Diplomointheology.objects.all()
-    return render(request, 'dipth.html',{"dth":dth})
+    return render(request, 'dipth.html', {"dth": dth})
 
 
 def bachelorinth(request):
     bth = Bachelorsintheology.objects.all()
-    return render(request, 'bth.html',{"bth":bth})
+    return render(request, 'bth.html', {"bth": bth})
 
 
 def mastersindivinity(request):
     mdiv = MastersinDivinity.objects.all()
-    return render(request, 'mdiv.html',{"mdiv":mdiv})
+    return render(request, 'mdiv.html', {"mdiv": mdiv})
 
 
 def donate(request):
@@ -130,7 +153,7 @@ def applyview(request):
             name = form.cleaned_data["name"]
             email = form.cleaned_data["email"]
             birth_date = form.cleaned_data["birth_date"]
-            phonenum = form.cleaned_data["phonenum"]
+            phone_number = form.cleaned_data["phone_number"]
             course_interested = form.cleaned_data["course_interested"]
             person_age_year = calculate_age(birth_date.day, birth_date.month, birth_date.year)
 
@@ -141,7 +164,7 @@ def applyview(request):
                     return HttpResponse("name already taken")
                 elif obj.email == email:
                     return HttpResponse("email already in use")
-                elif obj.phonenum == phonenum:
+                elif obj.phonenum == phone_number:
                     return HttpResponse('phonenum already exists')
 
                 elif person_age_year < 16 or person_age_year > 80:
@@ -152,7 +175,7 @@ def applyview(request):
             # print(birth_date.day) ex:1
             # print(birth_date.month) ex:2 feb
 
-            Apply.objects.create(name=name, email=email, birth_date=birth_date, phonenum=phonenum,
+            Apply.objects.create(name=name, email=email, birth_date=birth_date, phonenum=phone_number,
                                  course_interested=course_interested[0])
 
             return render(request, 'applysuccess.html')
@@ -190,8 +213,12 @@ def requestinfo(request):
 
 def admissionfaq(request):
     faq = Faq.objects.all()
-    return render(request, 'admission.html',{"faq":faq})
+    a =AdmissionPagecontent.objects.all()
+    return render(request, 'admission.html', {"faq": faq,"a":a})
 
+def statementofbelief(request):
+    obj = StatementOfBelief.objects.all()
+    return render(request, 'statementofbelief.html', {'a': obj})
 
 def list_alumni(request):
     allalumniobjs = Alumni.objects.all()
@@ -220,6 +247,4 @@ def course_details(request):
             context = {"coursedata": my_dict}
         return JsonResponse(data=context)
 
-
 # about us faculties needs only pic,name,department rest api endpoint
-

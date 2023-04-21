@@ -124,9 +124,18 @@ items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
 
+          {% for i in a %}
+        <div class="article">
+          <h1 class="top">{{i.title|safe}}</h1>
+         {% endfor %}
 
-          <h1 class="top">Welcome to Harvester's College</h1>
+         {% for i in a %}
+        <p class="top">{{i.description|safe}}</p>
+         {% endfor %}
+            </div>
 
+
+<!--
           <h2 class="top1">Our Vision</h2>
           <p>The vision of Harvesters Theological College is to equip godly servant-leaders for the Glory of God to be effective Evangelists, Church Planters, Pastors, Missionaries and Teachers in India. </p>
 
@@ -150,51 +159,7 @@ items.forEach(item => item.addEventListener('click', toggleAccordion));
           </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+!-->
 
        <footer class="footer-sec">
           <div class="row" style="border-bottom: 1px solid #8b49ab;">

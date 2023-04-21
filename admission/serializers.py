@@ -19,3 +19,8 @@ class PhotoGallerySerializer(serializers.ModelSerializer):
     class Meta:
         model = PhotoGallery
         fields = "__all__"
+
+class ApplySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Apply
+        fields = "__all__"

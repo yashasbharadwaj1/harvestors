@@ -9,9 +9,8 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="IE=EDGE" />
-  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+
 
   <title>Harvesters Theological Seminar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -65,60 +64,38 @@
 						<div class="dropdown-content">
 						  <a href="{% url 'admission:podcast' %}">Podcast</a>
 						  <a href="{% url 'admission:gallery' %}">Photogallery</a>
-						  <!--<a href="{% url 'admission:pc' %}">PlacementCell</a>!-->
 						</div>
 					  </li></li>
 
-      <li><a href="{% url 'admission:about' %}">About Us</a></li>
+
+      	<li class="dropdown">
+						<a href="{% url 'admission:about' %}" >About</a>
+						<div class="dropdown-content">
+						  <a href="{% url 'admission:statementofbelief' %}">Our Belief</a>
+						</div>
+					  </li></li>
       <li><a href="{% url 'admission:cth' %}">Academics</a></li>
       <li><a href="{% url 'admission:faq' %}">Admission</a></li>
       <li><a href="{% url 'admission:faculty' %}">Faculty</a></li>
       <li><a href="{% url 'admission:alumni' %}">Alumni</a></li>
    </ul>
 </nav>
+
     <div class="slider">
+         {% for i in s %}
       <div class="slide current">
+        <img src="{{i.img.url}}" width="100%" height="100%">
+
         <div class="content">
-          <h1>Faculty</h1>
-          <p> A bunch that loves God and love our students</p>
+          <h1>{{i.title}}</h1>
+          <p>{{i.caption}}</p>
         </div>
+
       </div>
-      <div class="slide">
-        <div class="content">
-          <h1>Slide Two</h1>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic maxime, voluptatibus labore doloremque
-            vero! </p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="content">
-          <h1>Slide Three</h1>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic maxime, voluptatibus labore doloremque
-            vero! </p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="content">
-          <h1>Slide four</h1>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic maxime, voluptatibus labore doloremque
-            vero! </p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="content">
-          <h1>Slide Five</h1>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic maxime, voluptatibus labore doloremque
-            vero! </p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="content">
-          <h1>Slide six</h1>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic maxime, voluptatibus labore doloremque
-            vero! </p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
+
+
     <div class="buttons">
       <button id="prev"><i class="fas fa-arrow-left"></i></button>
       <button id="next"><i class="fas fa-arrow-right"></i></button>
@@ -140,11 +117,11 @@
         </span>
         <div class="b3"> Bi-lingual (English and Tamil) </div>
       </div>
-      <div class="block">
-        <span class="material-symbols-outlined">
-          podium
-        </span>
-        <div class="b4">Practice ministry exposure</div>
+      <div class="block1">
+          <a href="https://ataindia.org/institution/harvesters-theological-college/" target="_blank">
+        <img class="material" src="https://ataindia.org/wp_install/wp-content/uploads/2017/07/ATA_logo_v3-home-150x99.png" </img>
+              </a>
+        <div class="b4">Affliated to ATA</div>
       </div>
     </div>
 
@@ -243,7 +220,10 @@
             <div class="slide-cover"></div>
             <div class="sl-card-wrapper">
               <div class="sl-gradient"></div>
-              <div class="sl-img-1 sl-bkg-img"></div>
+              <div class="sl-img-1 sl-bkg-img">
+                  <img src="{{course.picture}}" height="100%" width="100%" >
+              </div>
+
               <div class="sl--content-wrapper sl--content-wrapper-inactive">
                 <div class="sl--content-container sl--card-hide">
                   <p class="sl--sub-text">{{course.name}}</p>
@@ -364,6 +344,7 @@
             <div class="col-12">
 
               <p>©2023 Harvesters Theological Seminary.</p>
+               <p>Developed by: <a href="mailto:shekinahyashas43@gmail.com">shekinahyashas43@gmail.com</a></p>
             </div>
           </div>
 
